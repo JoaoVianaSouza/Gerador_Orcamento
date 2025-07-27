@@ -1,18 +1,18 @@
 # 📄 Gerador de Orçamentos em PDF com Flask
 -> Você pode acessar a aplicação online clicando aqui: https://joaovianasouza.pythonanywhere.com/
 
-##📝 Sobre o Projeto
+## 📝 Sobre o Projeto
 -> Este projeto é uma aplicação web completa desenvolvida em Python com o microframework Flask. A sua principal funcionalidade é permitir que prestadores de serviço criem, preencham e gerem orçamentos profissionais em formato PDF de forma rápida e segura.
 
 Este projeto foi construído como um exercício prático para solidificar conhecimentos em desenvolvimento web com Python, desde a criação da interface até a publicação (deploy) em um servidor online.
 
-##✨ Funcionalidades
+## ✨ Funcionalidades
 - Autenticação de Usuários: Sistema de login seguro para garantir que apenas usuários autorizados possam criar orçamentos.
 - Criação de Orçamentos: Formulário intuitivo para inserir dados do cliente, do prestador de serviço, lista de serviços e materiais.
 - Geração de PDF: Conversão automática dos dados do formulário em um documento PDF com layout profissional, pronto para ser impresso ou enviado ao cliente.
 - Interface Responsiva: Utilização do Bootstrap 5 para uma experiência agradável em desktops e dispositivos móveis.
 
-##🚀 Tecnologias Utilizadas
+## 🚀 Tecnologias Utilizadas
 Este projeto foi desenvolvido com as seguintes tecnologias:
 
 Backend:
@@ -30,7 +30,7 @@ Frontend:
 Hospedagem (Deploy):
 - PythonAnywhere
 
-##💻 Como Executar Localmente
+## 💻 Como Executar Localmente
 Para executar este projeto no seu ambiente local, siga os passos abaixo:
 
 Clone o repositório:
