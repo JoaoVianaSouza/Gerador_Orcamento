@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Orçamento</title>
+    <style>
+        body { font-family: sans-serif; font-size: 12px; }
+        .container { width: 80%; margin: auto; }
+        .header { margin-bottom: 40px; }
+        .header h1 { text-align: center; border-bottom: 1px solid #ccc; padding-bottom: 10px; }
+        .section { margin-bottom: 25px; }
+        .section h2 { background-color: #f2f2f2; padding: 8px; border-radius: 4px; font-size: 14px; }
+        .client-info p, .provider-info p { margin: 2px 0; }
+        .item-list { list-style-type: decimal; padding-left: 20px; }
+        .footer { text-align: center; margin-top: 60px; }
+        .signature-line { border-bottom: 1px solid #000; width: 300px; margin: 40px auto 5px auto; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Orçamento de Serviço Elétrico</h1>
+        </div>
+
+        <div class="section client-info">
+            <h2>PARA: {{ cliente_nome }}</h2>
+            <p><strong>CPF/CNPJ:</strong> {{ cliente_cnpj_cpf }}</p>
+            <p><strong>Endereço:</strong> {{ cliente_rua }}</p>
+            <p>{{ cliente_cidade }} - {{ cliente_estado }}, CEP: {{ cliente_cep }}</p>
+        </div>
+
+        <div class="section">
+            <h2>Serviços a Realizar:</h2>
+            <ol class="item-list">
+                {% for servico in servicos %}
+                    <li>{{ servico }}</li>
+                {% endfor %}
+            </ol>
+        </div>
+
+        <div class="section">
+            <h2>Material a ser Usado:</h2>
+            <ul class="item-list" style="list-style-type: disc;">
+                {% for material in materiais %}
+                    <li>{{ material }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>VALOR TOTAL DOS SERVIÇOS (MATERIAL INCLUSO):</h2>
+            <h3>R$ {{ valor_total }}</h3>
+        </div>
+
+        <div class="footer">
+            <p>{{ data_hoje }}</p>
+            <div class="signature-line"></div>
+            <p>{{ prestador_nome }}<br>CPF: {{ prestador_cpf }}</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gerar Novo Orçamento</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.css') }}">
+</head>
+<body class="bg-light">
+    <div class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} mt-3" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+    <div class="container mt-5 mb-5">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="text-center">Gerador de Orçamentos</h2>
+            </div>
+            <div class="card-body">
+                <form action="/gerar_pdf" method="post"> <fieldset class="border p-3 mb-4">
+                        <legend class="float-none w-auto p-2 h6">Seus Dados (Prestador)</legend>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="prestador_nome" class="form-label">Nome Completo</label>
+                                <input type="text" class="form-control" id="prestador_nome" name="prestador_nome" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="prestador_cpf" class="form-label">CPF</label>
+                                <input type="text" class="form-control" id="prestador_cpf" name="prestador_cpf" required>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="border p-3 mb-4">
+                        <legend class="float-none w-auto p-2 h6">Dados do Cliente</legend>
+                        <div class="mb-3">
+                            <label for="cliente_nome" class="form-label">Nome do Cliente / Condomínio</label>
+                            <input type="text" class="form-control" id="cliente_nome" name="cliente_nome" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="cliente_cnpj_cpf" class="form-label">CNPJ/CPF do Cliente</label>
+                            <input type="text" class="form-control" id="cliente_cnpj_cpf" name="cliente_cnpj_cpf">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8 mb-3">
+                                <label for="cliente_rua" class="form-label">Rua e Número</label>
+                                <input type="text" class="form-control" id="cliente_rua" name="cliente_rua" required>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <label for="cliente_cep" class="form-label">CEP</label>
+                                <input type="text" class="form-control" id="cliente_cep" name="cliente_cep" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="cliente_cidade" class="form-label">Cidade</label>
+                                <input type="text" class="form-control" id="cliente_cidade" name="cliente_cidade" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="cliente_estado" class="form-label">Estado</label>
+                                <input type="text" class="form-control" id="cliente_estado" name="cliente_estado" required>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="border p-3 mb-4">
+                        <legend class="float-none w-auto p-2 h6">Descrição</legend>
+                        <div class="mb-3">
+                            <label for="servicos" class="form-label">Serviços a serem realizados (um por linha)</label>
+                            <textarea class="form-control" id="servicos" name="servicos" rows="5" required></textarea>
+                        </div>
+                         <div class="mb-3">
+                            <label for="materiais" class="form-label">Materiais a serem usados (um por linha)</label>
+                            <textarea class="form-control" id="materiais" name="materiais" rows="5"></textarea>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="border p-3 mb-4">
+                        <legend class="float-none w-auto p-2 h6">Valor</legend>
+                         <div class="mb-3">
+                            <label for="valor_total" class="form-label">Valor Total (R$)</label>
+                            <input type="text" class="form-control" id="valor_total" name="valor_total" placeholder="Ex: 950,00" required>
+                        </div>
+                    </fieldset>
+
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-success btn-lg">Gerar Orçamento em PDF</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
