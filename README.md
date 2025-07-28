@@ -1,5 +1,7 @@
 # 📄 Gerador de Orçamentos em PDF com Flask
 -> Você pode acessar a aplicação online clicando aqui: https://joaovianasouza.pythonanywhere.com/
+Usuário para testes: teste
+Senha para testes: teste
 
 ## 📝 Sobre o Projeto
 -> Este projeto é uma aplicação web completa desenvolvida em Python com o microframework Flask. A sua principal funcionalidade é permitir que prestadores de serviço criem, preencham e gerem orçamentos em formato PDF de forma rápida e segura.
