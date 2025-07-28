@@ -2,7 +2,7 @@
 -> Você pode acessar a aplicação online clicando aqui: https://joaovianasouza.pythonanywhere.com/
 
 ## 📝 Sobre o Projeto
--> Este projeto é uma aplicação web completa desenvolvida em Python com o microframework Flask. A sua principal funcionalidade é permitir que prestadores de serviço criem, preencham e gerem orçamentos profissionais em formato PDF de forma rápida e segura.
+-> Este projeto é uma aplicação web completa desenvolvida em Python com o microframework Flask. A sua principal funcionalidade é permitir que prestadores de serviço criem, preencham e gerem orçamentos em formato PDF de forma rápida e segura.
 
 Este projeto foi construído como um exercício prático para solidificar conhecimentos em desenvolvimento web com Python, desde a criação da interface até a publicação (deploy) em um servidor online.
 
